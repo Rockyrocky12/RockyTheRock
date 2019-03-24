@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="jquery.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="mcheader">
+        <div class="imgwrapper">
+            <img src="mcdolo.png" alt="" style="width: 100%; border-radius: 50%">
+        </div>
+        <div class="text-wrapper">
+            <h1>Burgers</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <button data-toggle="collapse" data-target="#demo" class="btn btn-outline-danger btn-block">Payment Form</button>
+
+        <div id="demo" class="collapse">
+            <div class="row" style="border: 1px solid black; margin: 15px; padding: 15px">
+                <div class="col-sm-2">
+                    <label>Full Name: </label><br>
+                    <input type="text" id="fname"><br>
+                    <label>Address: </label><br>
+                    <input type="text" id="address"><br>
+                    <label>Phone Number: </label><br>
+                    <input type="text" id="number"><br>
+                    <hr>
+                    <button class="btn btn-block btn-outline-primary" onclick="mcdo.display()">Show Summary</button>
+                </div>
+                <div class="col-sm-6" style="margin:0px 20px">
+                    <label>Select Burger: </label>
+                    <select id="burger">
+                        <option>Big Mac</option>
+                        <option>Burger McDo</option>
+                        <option>Cheeseburger</option>
+                        <option>Crispy Chicken Sandwich</option>
+                        <option>Cheesy Burger McDo</option>
+                        <option>Double Cheeseburger</option>
+                    </select>
+                    <label>Quantity: </label>
+                    <select id="quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <hr>
+                    <p>Full Name: </p>
+                    <p id="sfname" style="color: red; font-size: 15px"></p>
+                    <p>Address: </p>
+                    <p id="saddress" style="color: red; font-size: 15px"></p>
+                    <p>Phone Number:</p>
+                    <p id="snumber" style="color: red; font-size: 15px"></p>
+                    <p>Order: </p>
+                    <p id="sselected" style="color: red; font-size: 15px"></p>
+                    <p>Quantity: </p>
+                    <p id="squantity" style="color: red; font-size: 15px"></p>
+
+                </div>
+                <div class="col-sm-3">
+                    <p>Total Cost: </p>
+                    <p id="stotal" style="color: red; font-size: 15px"></p>
+                    <hr>
+                    <button class="btn btn-outline-success" onclick="mcdo.submit()">Submit</button>
+                    <br><br>
+                    <p id="showp"></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="img.jpg" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 201.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="img3.jpg" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 108.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="img4.jpg" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 124.00</h5>
+                </div>
+            </div>
+            <h3 style="padding-left: 50px">Big Mac</h3>
+            <h3 style="padding-left: 280px">Burger McDo</h3>
+            <h3 style="padding-left: 225px">Cheeseburger</h3>
+        </div><hr>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="img2.jpg" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 77.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="img5.jpg" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 77.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="img6.jpg" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 166.00</h5>
+                </div>
+            </div>
+            <h3 style="padding-left: 40px">Crispy Chicken Sandwich</h3>
+            <h3 style="padding-left: 80px">Cheesy Burger McDo</h3>
+            <h3 style="padding-left: 120px">Double Cheeseburger</h3>
+        </div>
+        <hr>
+    </div> 
+    <script type="text/javascript">
+        var mcdo = {
+            fname: "",
+            address: "",
+            burger: "",
+            quantity: 0,
+            number: 0,
+            getvalues: function(){
+                this.fname = document.getElementById("fname").value;
+                this.address = document.getElementById("address").value;
+                var burgeroption = document.getElementById("burger").options;
+                var burgerindex = document.getElementById("burger").selectedIndex;
+                this.burger = burgeroption[burgerindex].value;
+                var qoption = document.getElementById("quantity").options;
+                var qindex = Number(document.getElementById("quantity").selectedIndex);
+                this.quantity = qoption[qindex].value;
+                this.number = Number(document.getElementById("number").value);
+            },
+            display: function(){
+                this.getvalues();
+                document.getElementById("sfname").innerHTML = this.fname;
+                document.getElementById("saddress").innerHTML = this.address;
+                document.getElementById("sselected").innerHTML = this.burger;
+                document.getElementById("snumber").innerHTML = this.number;
+                document.getElementById("squantity").innerHTML = this.quantity;
+
+                if (this.burger == "Big Mac"){
+                    document.getElementById("stotal").innerHTML = "Php201.00" + " X " + this.quantity + " = " + "Php" + 201.00*this.quantity;
+                }
+                else if (this.burger == "Burger McDo"){
+                    document.getElementById("stotal").innerHTML = "Php108.00" + " X " + this.quantity + " = " + "Php" + 108.00*this.quantity;
+                }
+                else if (this.burger == "Cheeseburger"){
+                    document.getElementById("stotal").innerHTML = "Php124.00" + " X " + this.quantity + " = " + "Php" + 124.00*this.quantity;
+                }
+                else if (this.burger == "Crispy Chicken Sandwich"){
+                    document.getElementById("stotal").innerHTML = "Php77.00" + " X " + this.quantity + " = " + "Php" + 77.00*this.quantity;
+                }
+                else if (this.burger == "Cheesy Burger McDo"){
+                    document.getElementById("stotal").innerHTML = "Php77.00" + " X " + this.quantity + " = " + "Php" + 77.00*this.quantity;
+                }
+                else if (this.burger == "Double Cheeseburger"){
+                    document.getElementById("stotal").innerHTML = "Php166.00" + " X " + this.quantity + " = " + "Php" + 166.00*this.quantity;
+                }
+            },
+            submit: function(){
+                this.getvalues();
+                document.getElementById("showp").innerHTML = "Please wait a couple of hours for delivering your order"
+                alert("You order has been received!")
+            }
+
+        }
+    </script>      
+</body>
+</html>

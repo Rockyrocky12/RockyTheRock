@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="jquery.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="mcheader">
+        <div class="imgwrapper">
+            <img src="mcdolo.png" alt="" style="width: 100%; border-radius: 50%">
+        </div>
+        <div class="text-wrapper">
+            <h1>Meal Deals</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <button data-toggle="collapse" data-target="#demo" class="btn btn-outline-danger btn-block">Payment Form</button>
+
+        <div id="demo" class="collapse">
+            <div class="row" style="border: 1px solid black; margin: 15px; padding: 15px">
+                <div class="col-sm-2">
+                    <label>Full Name: </label><br>
+                    <input type="text" id="fname"><br>
+                    <label>Address: </label><br>
+                    <input type="text" id="address"><br>
+                    <label>Phone Number: </label><br>
+                    <input type="text" id="number"><br>
+                    <hr>
+                    <button class="btn btn-block btn-outline-primary" onclick="mcdo.display()">Show Summary</button>
+                </div>
+                <div class="col-sm-6" style="margin:0px 20px">
+                    <label>Select Meal Deals: </label>
+                    <select id="meal">
+                        <option>2-pc. Hotcakes</option>
+                        <option>Cheesy Eggdesal</option>
+                        <option>Cheesy Burget McDo</option>
+                        <option>Chicken Fillet Ala King w/ Rice</option>
+                        <option>Chicken Fillet Ala King w/ Rice & Fries</option>
+                        <option>Cripsy Chicken Fillet w/ Rice</option>
+                        <option>Cripsy Chicken Fillet w/ Rice & Fries</option>
+                        <option>McSpaghetti</option>
+                        <option>McSpaghetti w/ Burger Mcdo</option>
+                    </select><br>
+                    <label>Quantity: </label>
+                    <select id="quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <hr>
+                    <p>Full Name: </p>
+                    <p id="sfname" style="color: red; font-size: 15px"></p>
+                    <p>Address: </p>
+                    <p id="saddress" style="color: red; font-size: 15px"></p>
+                    <p>Phone Number:</p>
+                    <p id="snumber" style="color: red; font-size: 15px"></p>
+                    <p>Order: </p>
+                    <p id="sselected" style="color: red; font-size: 15px"></p>
+                    <p>Quantity: </p>
+                    <p id="squantity" style="color: red; font-size: 15px"></p>
+
+                </div>
+                <div class="col-sm-3">
+                    <p>Total Cost: </p>
+                    <p id="stotal" style="color: red; font-size: 15px"></p>
+                    <hr>
+                    <button class="btn btn-outline-success" onclick="mcdo.submit()">Submit</button>
+                    <br><br>
+                    <p id="showp"></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal1.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 73.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal2.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 62.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal3.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 77.00</h5>
+                </div>
+            </div>
+            <h6 style="padding-left: 50px">2-pc. Hotcakes</h6>
+            <h6 style="padding-left: 280px">Cheesy Eggdesal</h6>
+            <h6 style="padding-left: 255px">Cheesy Burger McDo</h6>
+        </div><hr>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal4.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 84.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal5.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 113.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal6.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 84.00</h5>
+                </div>
+            </div>
+            <h6 style="padding-left: 40px">Chicken Fillet Ala King w/ Rice</h6>
+            <h6 style="padding-left: 170px">Chicken Fillet Ala King w/ Rice & Fries</h6>
+            <h6 style="padding-left: 120px">Crispy Chicken Fillet w/ Rice</h6>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal7.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 113.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal8.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 80.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="meal9.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 109.00</h5>
+                </div>
+            </div>
+            <h6 style="padding-left: 40px">Crispy Chicken Fillet w/ Rice & Fries</h6>
+            <h6 style="padding-left: 140px">McSpaghetti</h6>
+            <h6 style="padding-left: 290px">McSpaghetti w/ Burger McDo</h6>
+        </div>
+        <hr>
+    </div> 
+    <script type="text/javascript">
+        var mcdo = {
+            fname: "",
+            address: "",
+            meal: "",
+            quantity: 0,
+            number: 0,
+            getvalues: function(){
+                this.fname = document.getElementById("fname").value;
+                this.address = document.getElementById("address").value;
+                var moption = document.getElementById("meal").options;
+                var mindex = document.getElementById("meal").selectedIndex;
+                this.meal = moption[mindex].value;
+                var qoption = document.getElementById("quantity").options;
+                var qindex = document.getElementById("quantity").selectedIndex;
+                this.quantity = qoption[qindex].value;
+                this.number = Number(document.getElementById("number").value);
+            },
+            display: function(){
+                this.getvalues();
+                document.getElementById("sfname").innerHTML = this.fname;
+                document.getElementById("saddress").innerHTML = this.address;
+                document.getElementById("sselected").innerHTML = this.meal;
+                document.getElementById("snumber").innerHTML = this.number;
+                document.getElementById("squantity").innerHTML = this.quantity;
+
+                if (this.meal == "2-pc. Hotcakes"){
+                    document.getElementById("stotal").innerHTML = "Php73.00" + " X " + this.quantity + " = " + "Php" + 73.00*this.quantity;
+                }
+                else if (this.meal == "Cheesy Eggdesal"){
+                    document.getElementById("stotal").innerHTML = "Php62.00" + " X " + this.quantity + " = " + "Php" + 62.00*this.quantity;
+                }
+                else if (this.meal == "Cheesy Burger McDo"){
+                    document.getElementById("stotal").innerHTML = "Php77.00" + " X " + this.quantity + " = " + "Php" + 77.00*this.quantity;
+                }
+                else if (this.meal == "Chicken Fillet Ala King w/ Rice"){
+                    document.getElementById("stotal").innerHTML = "Php84.00" + " X " + this.quantity + " = " + "Php" + 84.00*this.quantity;
+                }
+                else if (this.meal == "Chicken Fillet Ala King w/ Rice & Fries"){
+                    document.getElementById("stotal").innerHTML = "Php113.00" + " X " + this.quantity + " = " + "Php" + 113.00*this.quantity;
+                }
+                else if (this.meal == "Crispy Chicken Fillet w/ Rice"){
+                    document.getElementById("stotal").innerHTML = "Php84.00" + " X " + this.quantity + " = " + "Php" + 84.00*this.quantity;
+                }
+                else if (this.meal == "Crispy Chicken Fillet w/ Rice & Fries"){
+                    document.getElementById("stotal").innerHTML = "Php113.00" + " X " + this.quantity + " = " + "Php" + 113.00*this.quantity;
+                }
+                else if (this.meal == "McSpaghetti"){
+                    document.getElementById("stotal").innerHTML = "Php80.00" + " X " + this.quantity + " = " + "Php" + 80.00*this.quantity;
+                }
+                else if (this.meal == "McSpaghetti w/ Burger McDo"){
+                    document.getElementById("stotal").innerHTML = "Php109.00" + " X " + this.quantity + " = " + "Php" + 109.00*this.quantity;
+                }
+            },
+            submit: function(){
+                this.getvalues();
+                document.getElementById("showp").innerHTML = "Please wait a couple of hours for delivering your order"
+                alert("You order has been received!")
+            }
+
+        }
+    </script>      
+</body>
+</html>

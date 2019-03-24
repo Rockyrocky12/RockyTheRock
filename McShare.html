@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="jquery.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="mcheader">
+        <div class="imgwrapper">
+            <img src="mcdolo.png" alt="" style="width: 100%; border-radius: 50%">
+        </div>
+        <div class="text-wrapper">
+            <h1>McShare Box</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <button data-toggle="collapse" data-target="#demo" class="btn btn-outline-danger btn-block">Payment Form</button>
+
+        <div id="demo" class="collapse">
+            <div class="row" style="border: 1px solid black; margin: 15px; padding: 15px">
+                <div class="col-sm-2">
+                    <label>Full Name: </label><br>
+                    <input type="text" id="fname"><br>
+                    <label>Address: </label><br>
+                    <input type="text" id="address"><br>
+                    <label>Phone Number: </label><br>
+                    <input type="text" id="number"><br>
+                    <hr>
+                    <button class="btn btn-block btn-outline-primary" onclick="mcdo.display()">Show Summary</button>
+                </div>
+                <div class="col-sm-6" style="margin:0px 15px">
+                    <label>Select McShare Box: </label>
+                    <select id="McShare">
+                        <option>McShare Bundle for 3</option>
+                        <option>McShare Bundle for 4</option>
+                        <option>6-pc. Chicken McShare Box</option>
+                        <option>8-pc. Chicken McShare Box</option>
+                        <option>Chicken McDo & McNuggets Bundle for 3</option>
+                        <option>Chicken McDo & McNuggets Bundle for 4</option>
+                        <option>10-pc. Chicken McNuggets</option>
+                        <option>20-pc. Chicken McNuggets Bundle</option>
+                        <option>20-pc. Chicken McNuggets</option>
+                    </select>
+                    <hr>
+                    <p>Full Name: </p>
+                    <p id="sfname" style="color: red; font-size: 15px"></p>
+                    <p>Address: </p>
+                    <p id="saddress" style="color: red; font-size: 15px"></p>
+                    <p>Phone Number:</p>
+                    <p id="snumber" style="color: red; font-size: 15px"></p>
+                    <p>Order: </p>
+                    <p id="sselected" style="color: red; font-size: 15px"></p>
+
+                </div>
+                <div class="col-sm-3">
+                    <p>Total Cost: </p>
+                    <p id="stotal" style="color: red; font-size: 15px"></p>
+                    <hr>
+                    <button class="btn btn-outline-success" onclick="mcdo.submit()">Submit</button>
+                    <br><br>
+                    <p id="showp"></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box1.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 499.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box2.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 725.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box3.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 390.00</h5>
+                </div>
+            </div>
+            <h6 style="padding-left: 50px">McShare Bundle for 3</h6>
+            <h6 style="padding-left: 240px">McShare Bundle for 4</h6>
+            <h6 style="padding-left: 225px">6-pc. Chicken McShare Box</h6>
+        </div><hr>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box4.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 510.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box5.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 499.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box6.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 725.00</h5>
+                </div>
+            </div>
+            <h6 style="padding-left: 40px">8-pc. Chicken McShare Box</h6>
+            <h6 style="padding-left: 190px">Chicken McDo & McNuggets Bundle for 3</h6>
+            <h6 style="padding-left: 80px">Chicken McDo & McNuggets Bundle for 4</h6>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box7.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 190.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box8.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 475.00</h5>
+                </div>
+            </div>
+            <div class="col-sm-4 background" style="border:2px solid #3b3b3b">
+                <img src="box9.png" alt="" width="100%">
+                <div class="text-block2"> 
+                    <h5>Php 370.00</h5>
+                </div>
+            </div>
+            <h6 style="padding-left: 40px">10-pc. Chicken McNuggets</h6>
+            <h6 style="padding-left: 190px">20-pc. Chicken McNuggets Bundle</h6>
+            <h6 style="padding-left: 80px">20-pc. Chicken McNuggets</h6>
+        </div>
+        <hr>
+    </div> 
+    <script type="text/javascript">
+        var mcdo = {
+            fname: "",
+            address: "",
+            box: "",
+            number: 0,
+            getvalues: function(){
+                this.fname = document.getElementById("fname").value;
+                this.address = document.getElementById("address").value;
+                var boxoption = document.getElementById("McShare").options;
+                var boxindex = document.getElementById("McShare").selectedIndex;
+                this.box = boxoption[boxindex].value;
+                this.number = Number(document.getElementById("number").value);
+                
+            },
+            display: function(){
+                this.getvalues();
+                document.getElementById("sfname").innerHTML = this.fname;
+                document.getElementById("saddress").innerHTML = this.address;
+                document.getElementById("sselected").innerHTML = this.box;
+                document.getElementById("snumber").innerHTML = this.number;
+
+                if (this.box == "McShare Bundle for 3"){
+                    document.getElementById("stotal").innerHTML = "Php499.00";
+                }
+                else if (this.box == "McShare Bundle for 4"){
+                    document.getElementById("stotal").innerHTML = "Php725.00";
+                }
+                else if (this.box == "6-pc. Chicken McShare Box"){
+                    document.getElementById("stotal").innerHTML = "Php390.00";
+                }
+                else if (this.box == "8-pc. Chicken McShare Box"){
+                    document.getElementById("stotal").innerHTML = "Php510.00";
+                }
+                else if (this.box == "Chicken McDo & McNuggets Bundle for 3"){
+                    document.getElementById("stotal").innerHTML = "Php499.00"; 
+                }
+                else if (this.box == "Chicken McDo & McNuggets Bundle for 4"){
+                    document.getElementById("stotal").innerHTML = "Php725.00";
+                }
+                else if (this.box == "10-pc. Chicken McNuggets"){
+                    document.getElementById("stotal").innerHTML = "Php190.00";
+                }
+                else if (this.box == "20-pc. Chicken McNuggets Bundle"){
+                    document.getElementById("stotal").innerHTML = "Php475.00";
+                }
+                else if (this.box == "20-pc. Chicken McNuggets"){
+                    document.getElementById("stotal").innerHTML = "Php370.00";
+                }
+
+            },
+            submit: function(){
+                this.getvalues();
+                document.getElementById("showp").innerHTML = "Please wait a couple of hours for delivering your order"
+                alert("You order has been received!")
+            }
+
+        }
+    </script>      
+</body>
+</html>
